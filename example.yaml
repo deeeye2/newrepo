@@ -1,0 +1,24 @@
+mode: remote
+identifier: Runner
+category: prod
+username: root
+jobs:
+  
+  - name: Notify Team
+    stages:
+      - name: Email Results
+        tasks:
+          send_email_with_attachment:
+            enabled: true
+            recipients:
+              - info@devops-bot.com
+              - mohamedsesay@Devopsbot.onmicrosoft.com
+            subject: "📦 Build Results"
+            body: |
+              Hello Team,
+  
+              Please find attached the latest build or scan report.
+  
+              Regards,
+              DevOps Bot
+            file_path: "/home/devops-bot/project/test/infracycle/notification.yaml" 
